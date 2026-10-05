@@ -1,14 +1,11 @@
-# nour_mohamed-
-<div align="center">
+# 💀 WIN OR DIE: The C++ Monolith
 
-# 🎮 [اسم اللعبة] 
-### 33,300+ Lines of Pure, Unforgiving C++ & SFML
+A fully custom-built 2D game engineered entirely from the ground up using **C++** and the **SFML** library. 
 
-**No Unity. No Unreal. No Shortcuts.**  
-Just raw logic, custom physics, and a monolithic `main` forged from scratch. 
+⚠️ **Warning:** The `main` file alone sits at **33,300+ lines of code**. 
+This project is a deep dive into low-level game loops, custom memory management, and manual collision detection without relying on ANY third-party game engines.
 
-[Gameplay](#gameplay) • [How to Build](#how-to-build) • [Screenshots](#screenshots) 
-
-</div>
-
-> *"They said use a game engine. I wrote 33.3K lines of C++ instead."* 🚀
+### ⚙️ Tech Stack & Stats
+- **Language:** Pure C++ 
+- **Graphics & Audio:** SFML
+- **Core Logic:** 33.3K+ LOC (Custom Rendering, Physics, State Management)
