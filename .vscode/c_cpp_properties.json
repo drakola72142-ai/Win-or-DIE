@@ -1,0 +1,19 @@
+﻿{
+    "configurations":  [
+                           {
+                               "name":  "MinGW x64",
+                               "includePath":  [
+                                                   "${workspaceFolder}/**",
+                                                   "${workspaceFolder}/library/SFML-2.6.2/include"
+                                               ],
+                               "defines":  [
+                                               "UNICODE",
+                                               "_UNICODE"
+                                           ],
+                               "cppStandard":  "c++17",
+                               "intelliSenseMode":  "windows-gcc-x64",
+                               "compilerPath":  "C:/toolchains/mingw64/bin/g++.exe"
+                           }
+                       ],
+    "version":  4
+}

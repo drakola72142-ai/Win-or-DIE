@@ -1,0 +1,26 @@
+﻿{
+    "version":  "0.2.0",
+    "configurations":  [
+                           {
+                               "name":  "Debug EclipseKnight (MinGW x64)",
+                               "type":  "cppdbg",
+                               "request":  "launch",
+                               "program":  "${workspaceFolder}/build/EclipseKnight.exe",
+                               "args":  [
+
+                                        ],
+                               "stopAtEntry":  false,
+                               "cwd":  "${workspaceFolder}",
+                               "environment":  [
+                                                   {
+                                                       "value":  "${workspaceFolder}/build;C:/toolchains/mingw64/bin;${env:PATH}",
+                                                       "name":  "PATH"
+                                                   }
+                                               ],
+                               "externalConsole":  true,
+                               "MIMode":  "gdb",
+                               "miDebuggerPath":  "C:/toolchains/mingw64/bin/gdb.exe",
+                               "preLaunchTask":  "Build EclipseKnight (MinGW x64)"
+                           }
+                       ]
+}

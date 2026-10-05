@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build EclipseKnight (MinGW x64)",
+      "type": "process",
+      "command": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "$ErrorActionPreference='Stop'; $root='${workspaceFolder}'; $sfml=Join-Path $root 'library/SFML-2.6.2'; $bin=Join-Path $sfml 'bin'; $lib=Join-Path $sfml 'lib'; $include=Join-Path $sfml 'include'; $toolbin='C:/toolchains/mingw64/bin'; $compiler=Join-Path $toolbin 'g++.exe'; if (!(Test-Path $compiler)) { throw 'Compatible GCC 13.1 not found at C:/toolchains/mingw64/bin/g++.exe' }; if (!(Test-Path (Join-Path $lib 'libsfml-graphics.a'))) { throw 'SFML MinGW libraries not found under library/SFML-2.6.2/lib' }; $out=Join-Path $root 'build'; New-Item -ItemType Directory -Force $out | Out-Null; $exe=Join-Path $out 'EclipseKnight.exe'; & $compiler -D_DEBUG -std=c++17 -g ('-I'+$include) (Join-Path $root 'game.cpp') ('-L'+$lib) -o $exe -lsfml-audio -lsfml-graphics -lsfml-window -lsfml-system; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; foreach ($runtime in @('openal32.dll','sfml-audio-2.dll','sfml-graphics-2.dll','sfml-system-2.dll','sfml-window-2.dll')) { Copy-Item (Join-Path $bin $runtime) $out -Force }; foreach ($runtime in @('libgcc_s_seh-1.dll','libstdc++-6.dll','libwinpthread-1.dll')) { $source=Join-Path $toolbin $runtime; if (Test-Path $source) { Copy-Item $source $out -Force } }; exit 0"
+      ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": "$gcc",
+      "group": { "kind": "build", "isDefault": true }
+    }
+  ]
+}
